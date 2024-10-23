@@ -1,0 +1,37 @@
+$soft-blue: hsl(231, 69%, 60%);
+$soft-red: hsl(0, 94%, 66%);
+$grayish-blue: hsl(229, 8%, 60%);
+$Very-dark-blue: hsl(229, 31%, 21%);
+$ff: "Rubik", sans-serif;
+$font-size: 18px;
+
+.btn {
+    border: none;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.btn-blue {
+  background-color: $soft-blue;
+  color: #fff;
+  &:hover {
+    outline: 2px solid $soft-blue;
+    color: $soft-blue;
+    background-color: #fff;
+  }
+}
+
+.btn-ash {
+  background-color: #eee;
+  color: $Very-dark-blue;
+  &:hover {
+    outline: 2px solid $Very-dark-blue;
+    color: $Very-dark-blue;
+    background-color:  #fff;
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  display: none;
+}

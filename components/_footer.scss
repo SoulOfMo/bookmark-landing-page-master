@@ -1,0 +1,55 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $Very-dark-blue;
+  padding: 30px 9rem;
+  font-size: 1.2rem;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5em;
+  }
+  ul {
+    display: flex;
+    gap: 4em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    li:hover {
+      color: $soft-red;
+      cursor: pointer;
+    }
+  }
+
+  .social {
+    display: flex;
+    gap: 2.5em;
+    fill: #fff;
+    transition: all 0.5s;
+    align-items: center;
+    svg {
+      &:hover {
+        fill: $soft-red;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media (max-width:'450px') {
+    flex-direction: column;
+    .nav {
+      flex-direction: column;
+      gap: 2em;
+      text-align: center;
+    }
+    ul{
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .social{
+      margin-top: 3rem;
+    }
+  }
+}

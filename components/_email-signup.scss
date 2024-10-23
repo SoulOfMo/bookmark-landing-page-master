@@ -1,0 +1,128 @@
+#contact {
+  background-color: $soft-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 280px;
+  align-items: center;
+  padding: 3rem 0 4rem;
+  margin-top: 3rem;
+  p {
+    font-size: 0.9rem;
+  }
+  .figure {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-weight: 500;
+  }
+  h3 {
+    color: white;
+    font-size: 2rem;
+    width: 320px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2em;
+    margin: 1em 0;
+  }
+
+  form {
+    display: flex;
+    gap: 1em;
+    font-size: 1.2rem;
+    .email {
+      width: 250px;
+      height: 55px;
+      position: relative;
+      color: white;
+      border-radius: 5px;
+      transition: all 0.1s;
+      input {
+        padding: 10px 20px;
+        width: 100%;
+        border-radius: 2px;
+        border: none;
+        height: 32px;
+        margin-bottom: 5px;
+        &::placeholder {
+          color: $grayish-blue;
+          font-size: 1.2rem;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &:is(:active, :focus) {
+          outline: none;
+        }
+      }
+      svg {
+        position: absolute;
+        top: 9px;
+        right: -50px;
+      }
+      span {
+        display: none;
+        transition: all 0.1s;
+        padding-left: 0.5rem;
+      }
+    }
+    button {
+      background-color: $soft-red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: 500;
+      height: 32px;
+      border-radius: 5px;
+      transition: all 0.2s;
+      font-weight: 500;
+      &:hover {
+        color: $soft-red;
+        outline: 2px solid $soft-red;
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+    .error.email {
+      padding: 2px 2px 0;
+      background-color: $soft-red;
+      span {
+        display: block;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    height: unset;
+  }
+  @media (max-width: 450px) {
+    justify-content: space-evenly;
+
+    form {
+      flex-direction: column;
+
+      width: 80%;
+      gap: 0;
+      .email {
+        width: 100%;
+        height: 60px;
+        input {
+          height: 40px;
+        }
+        &.error {
+          margin-bottom: 1rem;
+          span {
+            font-size: 1rem;
+          }
+        }
+        svg {
+          top: 12px;
+          right: 10px;
+        }
+      }
+    }
+    h3 {
+      width: 300px;
+      margin: 1rem auto;
+    }
+  }
+}
