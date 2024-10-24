@@ -1,7 +1,50 @@
 "use strict";
 
 // Selecting element
-const faqs = document.querySelectorAll(".faqs");
+const faqs = document.querySelectorAll(".faqs"),
+  features = document.querySelectorAll(".features ul li"),
+  featureDetails = document.querySelector(".features-details");
+
+features.forEach(function (item, i) {
+  item.addEventListener("click", () => {
+    features.forEach(function (checkfeatures) {
+      if (checkfeatures !== item) {
+        checkfeatures.classList.remove("active");
+      }
+      featureDetails.innerHTML = `
+        <div class="feature-illustration">
+          <img src="./images/illustration-features-tab-${featuresInfo[i].id}.svg" alt="illustration-hero">
+          <div class="bg-color"></div>
+        </div>
+        <div class="feature-details">
+          <h2>${featuresInfo[i].title}</h2>
+          <p>${featuresInfo[i].info}
+          </p>
+          <button class="btn btn-blue info">More Info</button>
+        </div>
+       `;
+    });
+    item.classList.toggle("active");
+  });
+});
+
+const featuresInfo = [
+  {
+    id: 1,
+    title: "Bookmark in one click",
+    info: "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.",
+  },
+  {
+    id: 2,
+    title: "Intelligent search",
+    info: "Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.",
+  },
+  {
+    id: 3,
+    title: "Share your bookmarks",
+    info: "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
+  },
+];
 
 faqs.forEach(function (faq) {
   //selecting article element
