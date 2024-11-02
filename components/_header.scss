@@ -16,7 +16,7 @@ header {
       align-items: center;
       letter-spacing: 0.1em;
       color: $Very-dark-blue;
-      font-weight: 500;
+      font-weight: 400;
       li:hover {
         color: $soft-red;
         cursor: pointer;
@@ -25,7 +25,7 @@ header {
       li.login {
         background-color: $soft-red;
         color: #fff;
-        padding: 10px 1.5em;
+        padding: 10px 30px;
         border-radius: 5px;
         &:hover {
           background-color: #fff;
@@ -38,13 +38,27 @@ header {
   .menu-btn {
     display: none;
   }
-  @media (max-width: "600px") {
+
+  @media (max-width: "800px") {
+    nav {
+      // display: none;
+      ul {
+        li:nth-child(1), li:nth-child(2),li:nth-child(3)   {
+          display: none;
+        }
+      }
+    }
+    padding: 2.5rem 2rem;
+  }
+
+  @media (max-width: "450px") {
     nav {
       display: none;
     }
     .menu-btn {
+      background-color: transparent;
+      border: none;
       display: block;
     }
-      padding: 2.5rem 2rem;
   }
 }

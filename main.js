@@ -3,8 +3,32 @@
 // Selecting element
 const faqs = document.querySelectorAll(".faqs"),
   features = document.querySelectorAll(".features ul li"),
-  featureDetails = document.querySelector(".features-details");
+  featureDetails = document.querySelector(".features-details"),
+  emailInput = document.getElementById("email"),
+  emailContainer = document.querySelector(".email"),
+  emailBtn = document.querySelector(".emailBtn"),
+  menuBtn = document.querySelector(".menu-btn"),
+  closeBtn = document.querySelector(".close-btn"),
+  overlayContainer = document.querySelector(".overlay");
+const featuresInfo = [
+  {
+    id: 1,
+    title: "Bookmark in one click",
+    info: "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.",
+  },
+  {
+    id: 2,
+    title: "Intelligent search",
+    info: "Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.",
+  },
+  {
+    id: 3,
+    title: "Share your bookmarks",
+    info: "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
+  },
+];
 
+//selecting the features
 features.forEach(function (item, i) {
   item.addEventListener("click", () => {
     features.forEach(function (checkfeatures) {
@@ -28,24 +52,6 @@ features.forEach(function (item, i) {
   });
 });
 
-const featuresInfo = [
-  {
-    id: 1,
-    title: "Bookmark in one click",
-    info: "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.",
-  },
-  {
-    id: 2,
-    title: "Intelligent search",
-    info: "Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.",
-  },
-  {
-    id: 3,
-    title: "Share your bookmarks",
-    info: "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
-  },
-];
-
 faqs.forEach(function (faq) {
   //selecting article element
   const question = faq.querySelector(".question");
@@ -60,4 +66,33 @@ faqs.forEach(function (faq) {
     });
     question.classList.toggle("show-answer");
   });
+});
+
+//checking for email vailodity 
+emailInput.addEventListener("blur", function () {
+  if (emailInput.validity.typeMismatch) {
+    emailInput.setCustomValidity(""); // Clear any previous custom error
+    emailContainer.classList.add("error");
+  } else {
+    emailContainer.classList.remove("error");
+  }
+});
+
+emailBtn.addEventListener("click", function (e) {
+  if (!emailInput.validity.valid) {
+    e.preventDefault();
+    emailInput.setCustomValidity("");
+    emailContainer.classList.add("error");
+  } else {
+    emailContainer.classList.remove("error");
+  }
+});
+
+// Adding functionality to the Overlay Menu
+menuBtn.addEventListener("click", () => {
+  overlayContainer.classList.add("show-menu");
+});
+
+closeBtn.addEventListener("click", () => {
+  overlayContainer.classList.remove("show-menu");
 });

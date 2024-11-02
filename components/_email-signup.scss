@@ -2,10 +2,8 @@
   background-color: $soft-blue;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 280px;
   align-items: center;
-  padding: 3rem 0 4rem;
+  padding: 5rem 0 4rem;
   margin-top: 3rem;
   p {
     font-size: 0.9rem;
@@ -16,14 +14,14 @@
     letter-spacing: 0.5em;
     font-weight: 500;
   }
-  h3 {
+  h2 {
     color: white;
-    font-size: 2rem;
-    width: 320px;
+    font-size: 3rem;
+    width:400px;
     font-weight: 500;
     text-align: center;
-    line-height: 1.2em;
-    margin: 1em 0;
+    line-height: 1.5;
+    margin: 1em 0 3rem;
   }
 
   form {
@@ -32,13 +30,13 @@
     font-size: 1.2rem;
     .email {
       width: 250px;
-      height: 55px;
+      height: 65px;
       position: relative;
       color: white;
       border-radius: 5px;
       transition: all 0.1s;
       input {
-        padding: 10px 20px;
+        padding: 20px;
         width: 100%;
         border-radius: 2px;
         border: none;
@@ -71,11 +69,13 @@
       background-color: $soft-red;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 20px;
       height: 33px;
       border-radius: 5px;
       transition: all 0.2s;
       font-weight: 500;
+      display: flex;
+      align-items: center;
       &:hover {
         color: $soft-red;
         outline: 2px solid $soft-red;
@@ -94,6 +94,7 @@
       }
     }
   }
+
   @media (max-width: 800px) {
     height: unset;
   }
@@ -122,8 +123,9 @@
         }
       }
     }
-    h3 {
-      width: 300px;
+    h2 {
+      font-size: 2.5rem;
+      width: 350px;
       margin: 1rem auto;
     }
   }
