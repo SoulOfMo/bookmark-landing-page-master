@@ -103,7 +103,7 @@ closeBtn.addEventListener("click", () => {
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
   if (!entry.isIntersecting) return;
   entry.target.classList.remove("section--hidden");
   observer.unobserve(entry.target);
@@ -132,4 +132,3 @@ sections.forEach((section) => sectionObserver.observe(section));
 // });
 
 // headerObserver.observe(featurehh);
-
