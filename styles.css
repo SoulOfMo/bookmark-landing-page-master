@@ -101,6 +101,13 @@ header {
   width: 100%;
   padding: 2.5rem 10rem;
   margin-bottom: 6rem;
+  z-index: 100;
+}
+header.sticky {
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.75);
 }
 header nav ul {
   display: flex;
@@ -135,7 +142,9 @@ header .menu-btn {
   header {
     padding: 2.5rem 2rem;
   }
-  header nav ul li:nth-child(1), header nav ul li:nth-child(2), header nav ul li:nth-child(3) {
+  header nav ul li:nth-child(1),
+  header nav ul li:nth-child(2),
+  header nav ul li:nth-child(3) {
     display: none;
   }
 }
@@ -871,4 +880,14 @@ body {
 
 main {
   margin-top: 2em;
+}
+
+section:not(:first-child) {
+  padding: 10rem 0;
+  transition: all 0.5s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
 }/*# sourceMappingURL=styles.css.map */

@@ -9,7 +9,11 @@ const faqs = document.querySelectorAll(".faqs"),
   emailBtn = document.querySelector(".emailBtn"),
   menuBtn = document.querySelector(".menu-btn"),
   closeBtn = document.querySelector(".close-btn"),
-  overlayContainer = document.querySelector(".overlay");
+  overlayContainer = document.querySelector(".overlay"),
+  sections = document.querySelectorAll("section"),
+  featurehh = document.querySelector("#features"),
+  header = document.querySelector("header");
+
 const featuresInfo = [
   {
     id: 1,
@@ -68,7 +72,7 @@ faqs.forEach(function (faq) {
   });
 });
 
-//checking for email vailodity 
+//checking for email vailodity
 emailInput.addEventListener("blur", function () {
   if (emailInput.validity.typeMismatch) {
     emailInput.setCustomValidity(""); // Clear any previous custom error
@@ -96,3 +100,36 @@ menuBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   overlayContainer.classList.remove("show-menu");
 });
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.2,
+});
+
+sections.forEach((section) => sectionObserver.observe(section));
+
+// const headerSticky = function (entries) {
+//   const [entry] = entries;
+//   console.log(entry);
+//   if (!entry.isIntersecting) header.classList.add("sticky");
+//   else header.classList.remove("sticky");
+// };
+
+// const headerheight = header.getBoundingClientRect().height;
+
+// const headerObserver = new IntersectionObserver(headerSticky, {
+//   root: null,
+//   threshold: 0.2,
+//   // rootMargin: `-${headerheight}px`,
+// });
+
+// headerObserver.observe(featurehh);
+

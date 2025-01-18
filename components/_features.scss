@@ -130,7 +130,7 @@
   }
 
   @media (max-width: "450px") {
-    p   {
+    p {
       width: 310px;
     }
     .features {
@@ -163,13 +163,12 @@
           transform: translateX(30px);
           width: 300px;
         }
-  
+
         .bg-color {
           width: 450px;
           height: 200px;
         }
       }
-
     }
   }
 }
